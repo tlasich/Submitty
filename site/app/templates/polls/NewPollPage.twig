@@ -41,11 +41,22 @@
             <input id="poll-date" class="poll-date" name="release_date" autocomplete="off" type="text" size="10" value=""/>
 
             <br/><br/>
-            
+
             <label for="student-histogram-release-setting" class="option-title">
                 Release response histogram to students:
             </label>
             <select id="student-histogram-release-setting" name="release_histogram">
+                <option value="never">Never</option>
+                <option value="when_ended">After Poll Ended</option>
+                <option value="always">Always</option>
+            </select>
+
+            <br/><br/>
+
+            <label for="student-display-correct-answers" class="option-title">
+                Display correct answer(s) to students:
+            </label>
+            <select id="student-display-correct-answers" name="release_histogram">
                 <option value="never">Never</option>
                 <option value="when_ended">After Poll Ended</option>
                 <option value="always">Always</option>
@@ -131,6 +142,18 @@
                 <option value="never" {{ poll.isHistogramAvailableNever() ? "selected": "" }}>Never</option>
                 <option value="when_ended" {{ poll.isHistogramAvailableWhenEnded() ? "selected": "" }}>After Poll Ended</option>
                 <option value="always" {{ poll.isHistogramAvailableAlways() ? "selected": "" }}>Always</option>
+            </select>
+
+            <br/><br/>
+
+            <label for="student-display-correct-answers" class="option-title">
+                Display correct answer(s) to students:
+            </label>
+            <select id="student-display-correct-answers" name="release_histogram">
+                <!-- TODO: need to add mechanisms to populate selected option -->
+                <option value="never">Never</option>
+                <option value="when_ended">After Poll Ended</option>
+                <option value="always">Always</option>
             </select>
 
             <br/>
