@@ -150,10 +150,9 @@
                 Display correct answer(s) to students:
             </label>
             <select id="student-display-correct-answers" name="release_histogram">
-                <!-- TODO: need to add mechanisms to populate selected option -->
-                <option value="never">Never</option>
-                <option value="when_ended">After Poll Ended</option>
-                <option value="always">Always</option>
+                <option value="never" {{ poll.isDisplayCorrectNever() ? "selected" : "" }}>Never</option>
+                <option value="when_ended" {{ poll.isDisplayCorrectWhenEnded() ? "selected" : "" }}>After Poll Ended</option>
+                <option value="always" {{ poll.isDisplayCorrectAlways() ? "selected" : "" }}>Always</option>
             </select>
 
             <br/>
